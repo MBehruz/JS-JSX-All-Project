@@ -1,8 +1,8 @@
 import React from 'react';
-import Board from './Board';
+import Root from './root';
 
 const App = () => {
-  return <Board />;
+  return <Root />;
 };
 
 export default App;
