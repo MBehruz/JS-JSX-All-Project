@@ -1,0 +1,2 @@
+{"level":"error","message":"::1 - - [30/May/2024:05:26:42 +0000] \"GET /api/admin/users/665806bef4690a9d2330fa66 HTTP/1.1\" 404 53 \"-\" \"PostmanRuntime/7.36.3\""}
+{"level":"error","message":"::1 - - [30/May/2024:05:26:43 +0000] \"GET /api/admin/users/665806bef4690a9d2330fa66 HTTP/1.1\" 404 53 \"-\" \"PostmanRuntime/7.36.3\""}

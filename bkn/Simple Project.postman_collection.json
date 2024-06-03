@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "c52cb021-64bb-429f-92f7-4e2726925f84",
+		"name": "Simple Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22809301"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "new User Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Behruz\",\r\n    \"lastName\":\"Muhammadjonov\",\r\n    \"brithday\":\"26-02-2005\",\r\n    \"age\":19,\r\n    \"address\":\"Fergana,Uzbekistan\",\r\n    \"phone\":\"888888888\",\r\n    \"role\":\"developer\",\r\n    \"password\":\"888888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/admin/users"
+					},
+					"response": []
+				},
+				{
+					"name": "get All User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{api}}/admin/users"
+					},
+					"response": []
+				},
+				{
+					"name": "get One User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{api}}/admin/users/6659682ba2fbac62f737e5ce"
+					},
+					"response": []
+				},
+				{
+					"name": "update One User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Behruz\",\r\n    \"lastName\":\"Muhammadjonov\",\r\n    \"brithday\":\"26-02-2005\",\r\n    \"age\":19,\r\n    \"address\":\"Fergana,Uzbekistan\",\r\n    \"phone\":\"888888877\",\r\n    \"role\":\"developer\",\r\n    \"password\":\"888888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/admin/users/6659682ba2fbac62f737e5ce"
+					},
+					"response": []
+				},
+				{
+					"name": "delete One User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Behruz\",\r\n    \"lastName\":\"Muhammadjonov\",\r\n    \"brithday\":\"26-02-2005\",\r\n    \"age\":19,\r\n    \"address\":\"Fergana,Uzbekistan\",\r\n    \"phone\":\"888888877\",\r\n    \"role\":\"developer\",\r\n    \"password\":\"888888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/admin/users/6659682ba2fbac62f737e5ce"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth user and admin",
+			"item": [
+				{
+					"name": "user auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    // pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"\r",
+									"    pm.collectionVariables.set(\"token\", responseJson.token);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"888888888\",\r\n    \"password\":\"888888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/auth/user"
+					},
+					"response": []
+				},
+				{
+					"name": "admin auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    // pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"\r",
+									"    pm.collectionVariables.set(\"token\", responseJson.token);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"000000000\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/auth/admin"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
