@@ -7,6 +7,7 @@ import Layout from '../componentRoot/Layout';
 import Home from '../componentRoot/Home';
 import NotFound from '../componentRoot/NotFound';
 import HomeRegister from '../componentRegisterAuth/Home';
+import Hook from '../ReactHook';
 
 const Root = () => {
   return (
@@ -25,8 +26,11 @@ const Root = () => {
       {/* Outlet  */}
 
       {/* component Auth register token */}
-      <Route path='/' element={<HomeRegister />} />
+      {/* <Route path='/' element={<HomeRegister />} /> */}
       {/* component Auth register token */}
+
+      {/*  */}
+      <Route path='/' element={<Hook />} />
     </Routes>
   );
 };
