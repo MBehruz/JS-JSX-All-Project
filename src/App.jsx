@@ -5,7 +5,7 @@ import { ReactHook } from './ReactHook';
 const App = () => {
   return (
     <div>
-      <ReactHook /> {/* <Root /> */}
+      <Root />
     </div>
   );
 };

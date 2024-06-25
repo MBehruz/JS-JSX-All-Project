@@ -8,6 +8,7 @@ import Home from '../componentRoot/Home';
 import NotFound from '../componentRoot/NotFound';
 import HomeRegister from '../componentRegisterAuth/Home';
 import Hook from '../ReactHook';
+import Redus from '../Reducer';
 
 const Root = () => {
   return (
@@ -29,8 +30,11 @@ const Root = () => {
       {/* <Route path='/' element={<HomeRegister />} /> */}
       {/* component Auth register token */}
 
-      {/*  */}
-      <Route path='/' element={<Hook />} />
+      {/* useMemo useCalback */}
+      {/* <Route path='/' element={<Hook />} /> */}
+
+      {/* reducer */}
+      <Route path='/' element={<Redus />} />
     </Routes>
   );
 };
