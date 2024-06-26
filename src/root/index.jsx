@@ -9,6 +9,7 @@ import NotFound from '../componentRoot/NotFound';
 import HomeRegister from '../componentRegisterAuth/Home';
 import Hook from '../ReactHook';
 import Redus from '../Reducer';
+import QR from '../QRcode';
 
 const Root = () => {
   return (
@@ -34,7 +35,10 @@ const Root = () => {
       {/* <Route path='/' element={<Hook />} /> */}
 
       {/* reducer */}
-      <Route path='/' element={<Redus />} />
+      {/* <Route path='/' element={<Redus />} /> */}
+
+      {/* QR code */}
+      <Route path='/' element={<QR />} />
     </Routes>
   );
 };
