@@ -30,7 +30,7 @@ const QR = () => {
           border: 'none',
           outline: 'none',
           padding: '0.5rem',
-          width: '250px',
+          width: '260px',
           boxSizing: 'border-box',
         }}
       />
