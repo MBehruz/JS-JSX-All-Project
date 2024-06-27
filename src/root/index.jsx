@@ -35,10 +35,10 @@ const Root = () => {
       {/* <Route path='/' element={<Hook />} /> */}
 
       {/* reducer */}
-      {/* <Route path='/' element={<Redus />} /> */}
+      <Route path='/' element={<Redus />} />
 
       {/* QR code */}
-      <Route path='/' element={<QR />} />
+      {/* <Route path='/' element={<QR />} /> */}
     </Routes>
   );
 };
