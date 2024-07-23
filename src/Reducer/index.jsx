@@ -4,7 +4,7 @@ import { reducer } from './reducers';
 
 const Redus = () => {
   const [count, dispatch] = useReducer(reducer);
-  count == 0 ? 'disable' : count;
+  // count == 0 ? 'disable' : count;
   return (
     <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
       <button onClick={() => dispatch({ type: INC })}>ok + </button>
